@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Schedule an event
+{% endblock %}
+
+{% block main %}
+<div class="mb-3">
+    Enter a username you want to schedule an event with.
+</div>
+<form action="/schedule" enctype="multipart/form-data" method="post">
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="other-user" name="other-user" placeholder="Other user" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+{% endblock %}

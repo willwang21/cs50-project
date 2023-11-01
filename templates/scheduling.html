@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Scheduling an event
+{% endblock %}
+
+{% block main %}
+{% if permission %}
+    <div class="mb-3">
+        Choose the type and length of your meeting.
+    </div>
+    <form action="/scheduling" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="meet-type">
+                <option disabled selected>Type</option>
+                    <option>Morning</option>
+                    <option>Lunch</option>
+                    <option>Afternoon</option>
+                    <option>Dinner</option>
+                    <option>Evening</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" min="0" max="60" name="meet-length" step="15" placeholder="Meeting length" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% else %}
+    <div class="mb-3">
+        Sorry, you don't have permission to schedule a meeting with that user.
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+Upload a calendar
+{% endblock %}
+
+{% block main %}
+<div class="mb-3">
+    Upload an iCalendar file, ending in .ics.
+</div>
+<form action="/upload" enctype="multipart/form-data" method="post">
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" id="calendar" name="calendar" type="file">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+{% endblock %}

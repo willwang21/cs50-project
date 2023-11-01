@@ -1,0 +1,4 @@
+CS50
+Flask
+Flask-Session
+icalendar
